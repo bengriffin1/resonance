@@ -46,27 +46,27 @@ airflow test DAGNAME TASKNAME DATE # Run this to test a single task`
 
 
 ___Shopify Object Notes___
-# products
-#     should we include collections?
-# orders (only last 60 days?, need to request access for more)
-      refunds, included in orders but can be standalone
-      checkouts (abandoned checkouts)
-# analytics (not including, only aggregations)
-# customers (not including)
+products
+  should we include collections?
+orders (only last 60 days?, need to request access for more)
+  refunds, included in orders but can be standalone
+  checkouts (abandoned checkouts)
+analytics (not including, only aggregations)
+customers (not including)
 
 
 ___Things to consider___
-# security, PII
-# maybe set up reports for each store in Shopify until we get a UI
-# cadence of retrieving data... airflow?
-    every hour, pull data from last timestamp?
-# compression of jsons in s3
-# issues w athena? > complex queries and slow runtime
-# next steps, deduping/ most recent view, splitting into real tables, applying transformations
-# I wouldn't use glue crawlers, just hand-write schemas
-# hook up alerting to airflow
-# kafka + webhooks, possibly stream directly into snowflake?
-# Using docker containers for developer workflow
+security, PII
+maybe set up reports for each store in Shopify until we get a UI
+cadence of retrieving data... airflow?
+  every hour, pull data from last timestamp?
+compression of jsons in s3
+issues w athena? > complex queries and slow runtime
+next steps, deduping/ most recent view, splitting into real tables, applying transformations
+I wouldn't use glue crawlers, just hand-write schemas
+hook up alerting to airflow
+kafka + webhooks, possibly stream directly into snowflake?
+Using docker containers for developer workflow
 
 
 ___Tradeoff Notes___
